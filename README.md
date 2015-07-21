@@ -8,6 +8,6 @@ HOW TO
 
 2. `$ mkdir lib`
 
-3. `$ pip install -t lib python-telegram-bot`
+3. `$ pip install -t lib python-telegram-bot BeautifulSoup`
 
 4. `$ appcfg.py -A <APP_NAME> update .`
