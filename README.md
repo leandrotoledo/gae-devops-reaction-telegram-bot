@@ -10,6 +10,4 @@ HOW TO
 
 3. `$ pip install -t lib python-telegram-bot`
 
-4. `$ pip install -t lib python-telegram-bot`
-
-5. `$ appcfg.py -A <APP_NAME> update .`
+4. `$ appcfg.py -A <APP_NAME> update .`
