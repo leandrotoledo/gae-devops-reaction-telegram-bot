@@ -6,6 +6,9 @@ from devops_reactions import DevOpsReactions
 
 from google.appengine.api import urlfetch
 
+bot = telegram.Bot('<TOKEN>')
+bot.setWebhook('https://<URL>/<TOKEN>')
+
 class DevOpsReactionsBotWebhookPage(webapp2.RequestHandler):
     def post(self):
         urlfetch.set_default_fetch_deadline(60)
@@ -16,8 +19,6 @@ class DevOpsReactionsBotWebhookPage(webapp2.RequestHandler):
 
         chat_id = update.message.chat.id
         message = update.message.text
-
-        bot = telegram.Bot('TOKEN')
 
         if '/start' in message or '/help' in message:
             bot.sendMessage(chat_id=chat_id,
@@ -41,7 +42,7 @@ class DevOpsReactionsBotWebhookPage(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('', DevOpsReactionsBotWebhookPage),
+    ('/<TOKEN>', DevOpsReactionsBotWebhookPage),
 ], debug=True)
 
 def main():
